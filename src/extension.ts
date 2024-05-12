@@ -86,6 +86,7 @@ class WordCounter {
 
 		// prepare text string by removing target info from the word count
 		let sectionTextLines: string[] = documentLines.slice(lastHeaderLine, nextHeaderLine);
+		sectionTextLines = sectionTextLines.filter((line) => !line.startsWith('#'));
 		let result: string = sectionTextLines.join(' ');
 
 		return result;
